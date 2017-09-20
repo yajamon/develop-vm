@@ -1,5 +1,6 @@
 ---
 - hosts: all
   tasks:
-    - name: hello world
-      command: echo "hello world!"
+    - name: yum update
+      become: yes
+      yum: name=* state=latest
