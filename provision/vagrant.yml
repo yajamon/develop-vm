@@ -13,6 +13,12 @@
         name: '@Development tools'
         state: present
 
+    - name: install yum-utils
+      become: yes
+      yum:
+        name: yum-utils
+        state: present
+
     - name: install software collections
       become: yes
       yum:
