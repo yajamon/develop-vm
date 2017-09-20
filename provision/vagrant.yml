@@ -4,3 +4,7 @@
     - name: yum update
       become: yes
       yum: name=* state=latest
+
+    - name: install software collections
+      become: yes
+      yum: name=centos-release-scl
