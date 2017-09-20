@@ -7,6 +7,12 @@
         name: '*'
         state: latest
 
+    - name: install development tools
+      become: yes
+      yum:
+        name: '@Development tools'
+        state: present
+
     - name: install software collections
       become: yes
       yum:
