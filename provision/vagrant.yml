@@ -3,8 +3,16 @@
   tasks:
     - name: yum update
       become: yes
-      yum: name=* state=latest
+      yum:
+        name: '*'
+        state: latest
 
     - name: install software collections
       become: yes
-      yum: name=centos-release-scl
+      yum:
+        name: centos-release-scl
+        state: present
+
+    - name: enable repository of software collections
+      become: yes
+      command: yum-config-manager --enable rhel-server-rhscl-7-rpms
