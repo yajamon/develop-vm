@@ -1,5 +1,8 @@
 
-# Created by https://www.gitignore.io/api/vim,linux,macos,emacs,windows,vagrant,visualstudiocode
+# Created by https://www.gitignore.io/api/vim,linux,macos,emacs,ansible,windows,vagrant,visualstudiocode
+
+### Ansible ###
+*.retry
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -153,4 +156,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/vim,linux,macos,emacs,windows,vagrant,visualstudiocode
+# End of https://www.gitignore.io/api/vim,linux,macos,emacs,ansible,windows,vagrant,visualstudiocode
