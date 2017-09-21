@@ -39,3 +39,16 @@
     - name: enable rh-python35
       become: yes
       shell: echo 'source /opt/rh/rh-python35/enable' > /etc/profile.d/rh-python35.sh
+
+    - name: install gcc, gcc-c++ from devtoolset6
+      become: yes
+      yum:
+        name:
+          - devtoolset-6-gcc
+          - devtoolset-6-binutils
+          - devtoolset-6-gcc-c++
+          - devtoolset-6-gcc-gfortran
+
+    - name: enable devtoolset-6
+      become: yes
+      shell: echo 'source /opt/rh/devtoolset-6/enable' > /etc/profile.d/devtoolset-6.sh
