@@ -30,7 +30,6 @@ vagrant up
 
 ```bash
 cd develop-vm
-vagrant destroy # If exists
 vagrant up --no-provision
 vagrant sandbox on
 ```
@@ -42,3 +41,10 @@ vagrant sandbox on
     - `vagrant sandbox rollback`
 3. Provision
     - `vagarnt provision`
+
+### Restart
+
+```bash
+cd develop-vm
+vagrant destroy
+```
