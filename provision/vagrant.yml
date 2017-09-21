@@ -52,3 +52,20 @@
     - name: enable devtoolset-6
       become: yes
       shell: echo 'source /opt/rh/devtoolset-6/enable' > /etc/profile.d/devtoolset-6.sh
+
+    - name: download peco
+      get_url:
+        url: https://github.com/peco/peco/releases/download/v0.5.1/peco_linux_amd64.tar.gz
+        dest: /tmp/peco_linux_amd64.tar.gz
+
+    - name: unarchive peco
+      unarchive:
+        remote_src: yes
+        src: /tmp/peco_linux_amd64.tar.gz
+        dest: /tmp/
+
+    - name: install peco
+      become: yes
+      command: cp peco_linux_amd64/peco /usr/local/bin/
+      args:
+        chdir: /tmp
