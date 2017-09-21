@@ -1,5 +1,5 @@
 # develop-vm
-my develop virtual machine
+my virtual machine for develop
 
 ## Requirement
 
