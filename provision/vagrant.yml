@@ -35,3 +35,7 @@
         name:
           - rh-python35
           - rh-python35-python-virtualenv
+
+    - name: enable rh-python35
+      become: yes
+      shell: echo 'source /opt/rh/rh-python35/enable' > /etc/profile.d/rh-python35.sh
