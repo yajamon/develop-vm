@@ -40,6 +40,19 @@
       become: yes
       shell: echo 'source /opt/rh/rh-python35/enable' > /etc/profile.d/rh-python35.sh
 
+    - name: install Apache 2.4 from SCL
+      become: yes
+      yum:
+        name:
+          - httpd24-httpd
+          - httpd24-mod_ssl
+          - httpd24-mod_session
+          - httpd24-mod_proxy_html
+
+    - name: enable Apache 2.4
+      become: yes
+      shell: echo 'source /opt/rh/httpd24-httpd/enable' > /etc/profile.d/httpd24-httpd.sh
+
     - name: install gcc, gcc-c++ from devtoolset6
       become: yes
       yum:
