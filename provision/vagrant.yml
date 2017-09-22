@@ -31,6 +31,10 @@
           - zsh
           - zsh-completions
 
+    - name: set zsh as default shell for vagrant user
+      become: yes
+      command: chsh -s '/usr/bin/zsh'
+
     - name: install software collections
       become: yes
       yum:
