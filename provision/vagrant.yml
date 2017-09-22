@@ -40,6 +40,9 @@
       yum:
         name: tmux
 
+    - name: install dotfiles
+      command: curl -L https://raw.githubusercontent.com/yajamon/dotfiles/master/install.sh | sh
+
     - name: install software collections
       become: yes
       yum:
