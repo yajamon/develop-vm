@@ -29,6 +29,23 @@
       yum:
         name:
           - zsh
+
+    - name: download repoInfo for zsh-completions
+      become: yes
+      get_url:
+        url: "https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/CentOS_7/shells:zsh-users:zsh-completions.repo"
+        dest: /tmp/shells:zsh-users:zsh-completions.repo
+
+    - name: add repoInfo for zsh-completions
+      become: yes
+      command: cp shells:zsh-users:zsh-completions.repo /etc/yum.repos.d/
+      args:
+        chdir: /tmp
+
+    - name: install zsh-completions
+      become: yes
+      yum:
+        name:
           - zsh-completions
 
     - name: set zsh as default shell for vagrant user
