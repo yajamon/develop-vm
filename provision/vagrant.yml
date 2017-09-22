@@ -35,6 +35,11 @@
       become: yes
       command: chsh -s '/usr/bin/zsh'
 
+    - name: install tmux
+      become: yes
+      yum:
+        name: tmux
+
     - name: install software collections
       become: yes
       yum:
