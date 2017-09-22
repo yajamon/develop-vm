@@ -24,6 +24,13 @@
       yum:
         name: bash-completions
 
+    - name: install zsh
+      become: yes
+      yum:
+        name:
+          - zsh
+          - zsh-completions
+
     - name: install software collections
       become: yes
       yum:
