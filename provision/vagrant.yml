@@ -22,7 +22,7 @@
     - name: install bash-completions
       become: yes
       yum:
-        name: bash-completions
+        name: bash-completion
 
     - name: install zsh
       become: yes
