@@ -50,7 +50,7 @@
 
     - name: set zsh as default shell for vagrant user
       become: yes
-      command: chsh -s '/usr/bin/zsh'
+      command: chsh -s '/bin/zsh' vagrant
 
     - name: install tmux
       become: yes
@@ -92,7 +92,7 @@
 
     - name: enable Apache 2.4
       become: yes
-      shell: echo 'source /opt/rh/httpd24-httpd/enable' > /etc/profile.d/httpd24-httpd.sh
+      shell: echo 'source /opt/rh/httpd24/enable' > /etc/profile.d/httpd24.sh
 
     - name: install gcc, gcc-c++ from devtoolset6
       become: yes
