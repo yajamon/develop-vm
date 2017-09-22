@@ -19,6 +19,11 @@
         name: yum-utils
         state: present
 
+    - name: install bash-completions
+      become: yes
+      yum:
+        name: bash-completions
+
     - name: install software collections
       become: yes
       yum:
